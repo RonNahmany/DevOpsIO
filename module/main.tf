@@ -76,7 +76,7 @@ module "eks" {
     one = {
       name = "NodeGroup1"
 
-      instance_types = var.instance_types["freetier"]
+      instance_types = var.instance_types
 
       min_size     = 1
       max_size     = 2
@@ -86,7 +86,7 @@ module "eks" {
     two = {
       name = "NodeGroup2"
 
-      instance_types = var.instance_types["freetier"]
+      instance_types = var.instance_types
 
       min_size     = 1
       max_size     = 2

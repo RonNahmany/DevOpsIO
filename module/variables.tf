@@ -12,11 +12,7 @@ variable "vpc_name" {
 
 variable "instance_types" {
   description = "freetier"
-  type        = map(string)
-  default = {
-    "freetier" = "t2.micro"
-    "db"       = "t2.medium"
-    "cache"    = "t3.micro"
-  }
+  type        = string
+  default = "t2.micro"
 }
 
