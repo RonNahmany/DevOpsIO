@@ -18,6 +18,8 @@ jobs:
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.3.0 
 
     - name: Terraform Init
       working-directory: module
@@ -33,15 +35,14 @@ jobs:
 
     - name: Terraform Plan
       working-directory: module
-      run: terraform plan
+      run: terraform plan -out=planfile
 
     - name: Upload Plan Artifacts
       if: success() && github.event_name == 'push'
-      working-directory: module
       uses: actions/upload-artifact@v3
       with:
         name: terraform-plan
-        path: planfile
+        path: module/planfile
 
     - name: Notify on Failure
       if: failure()
