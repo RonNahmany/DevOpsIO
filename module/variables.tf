@@ -10,7 +10,7 @@ variable "vpc_name" {
   default     = "il-central-1"
 }
 
-variable "instance_types" {
+variable "instance_types_name" {
   description = "freetier"
   type        = map(string)
   default = {
