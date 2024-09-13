@@ -10,7 +10,7 @@ variable "vpc_name" {
   default     = "il-central-1"
 }
 
-variable "instance_types_name" {
+variable "instance_types" {
   description = "freetier"
   type        = map(string)
   default = {
@@ -19,3 +19,4 @@ variable "instance_types_name" {
     "cache"    = "t3.micro"
   }
 }
+
