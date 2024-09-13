@@ -13,6 +13,6 @@ variable "vpc_name" {
 variable "instance_types" {
   description = "freetier"
   type        = string
-  default = "t2.micro"
+  default     = "t2.micro"
 }
 
