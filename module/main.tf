@@ -76,7 +76,7 @@ module "eks" {
     one = {
       name = "NodeGroup1"
 
-      instance_types = var.instance_types_name[freetier]
+      instance_types = ["t2.micro"]
 
       min_size     = 1
       max_size     = 2
