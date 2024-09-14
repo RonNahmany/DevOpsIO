@@ -45,8 +45,10 @@ jobs:
 
     - name: Tag Docker image
       run: |
+        docker tag nginximage:latest ronnahmany/testrun:latest
         docker tag nginximage:latest ronnahmany/testrun:${{ env.VERSION }}
 
     - name: Push Docker image to Docker Hub
       run: |
+        docker tag nginximage:latest ronnahmany/testrun:latest
         docker push ronnahmany/testrun:${{ env.VERSION }}
