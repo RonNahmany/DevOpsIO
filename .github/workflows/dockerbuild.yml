@@ -3,7 +3,7 @@ name: Build Docker Image
 on:
   push:
     branches:
-      - main # or the branch you want to trigger this action
+      - k8s # or the branch you want to trigger this action
 
 jobs:
   build:
@@ -26,4 +26,4 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t nginximage:latest ./DockerBuild
+        docker build -t nginximage:latest -f ./DockerBuild
