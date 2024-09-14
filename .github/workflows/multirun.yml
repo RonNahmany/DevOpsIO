@@ -1,0 +1,16 @@
+name: Combo Workflow execution
+
+on:
+  push:
+    branches:
+      - combo  # This workflow will run on push to the `combo` branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Example step
+        run: echo "Combo workflow ran successfully."
