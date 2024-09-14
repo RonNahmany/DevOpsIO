@@ -2,7 +2,7 @@ name: Build Docker Image
 
 on:
   workflow_run:
-    workflows: ["multirun"]
+    workflows: ["Combo Workflow execution"]
     types:
       - completed
   workflow_dispatch:
