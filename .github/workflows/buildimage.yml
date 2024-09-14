@@ -1,1 +1,31 @@
-ss
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - k8s # Trigger on pushes to the 'k8s' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+   
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        ref: k8s # Ensure we check out the 'k8s' branch
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Cache Docker layers
+      uses: actions/cache@v3
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
+
+    - name: Build Docker image
+      run: |
+        docker build -t nginximage:latest -f dockerbuild/Dockerfile .
