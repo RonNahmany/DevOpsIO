@@ -28,4 +28,4 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t nginximage:latest -f dockerbuild/Dockerfile .
+        docker build -t nginximage:latest -f DockerBuild/dockerfile .
