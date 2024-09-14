@@ -1,10 +1,11 @@
 name: Build Docker Image
 
 on:
-#  push:
-#    branches:
-#      - k8s # Trigger on pushes to the 'k8s' branch
-   workflow_dispatch:
+  workflow_run:
+    workflows: ["Combo Workflow"]
+    types:
+      - completed
+  workflow_dispatch:
     
 jobs:
   build:
